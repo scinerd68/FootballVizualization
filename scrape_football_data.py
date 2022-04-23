@@ -34,27 +34,28 @@ if __name__ == "__main__":
     wait = WebDriverWait(driver, 20)
 
     # Load the HTML page
-    driver.get("https://1xbet.whoscored.com/Regions/252/Tournaments/2/Seasons/4311/Stages/9155/TeamStatistics/England-Premier-League-2014-2015#statistics-team-table-offensive")
+    URL = "https://1xbet.whoscored.com/Regions/252/Tournaments/2/Seasons/1849/Stages/3115/TeamStatistics/England-Premier-League-2009-2010"
+    driver.get(URL)
 
     # Scrape summary stats
     soup = BeautifulSoup(driver.page_source, 'lxml')
     table = soup.find(id="statistics-team-table-summary").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/summary.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/summary.csv')
     except AssertionError:
         driver.quit()
 
     # Scrape goals stats
     table = soup.find(id="stage-goals").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/goals.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/goals.csv')
     except AssertionError:
         driver.quit()
 
     # Scrape attack sides stats
     table = soup.find(id="stage-touch-channels").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/attack-sides.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/attack-sides.csv')
     except AssertionError:
         driver.quit()
 
@@ -69,7 +70,7 @@ if __name__ == "__main__":
     soup = BeautifulSoup(driver.page_source, 'lxml')
     table = soup.find(id="statistics-team-table-offensive").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/offensive.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/offensive.csv')
     except AssertionError:
         driver.quit()
 
@@ -84,7 +85,7 @@ if __name__ == "__main__":
     soup = BeautifulSoup(driver.page_source, 'lxml')
     table = soup.find(id="statistics-team-table-defensive").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/defensive.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/defensive.csv')
     except AssertionError:
         driver.quit()
 
@@ -99,7 +100,7 @@ if __name__ == "__main__":
     soup = BeautifulSoup(driver.page_source, 'lxml')
     table = soup.find(id="statistics-team-table-detailed").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/detailed.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/detailed.csv')
     except AssertionError:
         driver.quit()
 
@@ -114,7 +115,7 @@ if __name__ == "__main__":
     soup = BeautifulSoup(driver.page_source, 'lxml')
     table = soup.find(id="stage-passes").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/passes.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/passes.csv')
     except AssertionError:
         driver.quit()
 
@@ -129,7 +130,7 @@ if __name__ == "__main__":
     soup = BeautifulSoup(driver.page_source, 'lxml')
     table = soup.find(id="stage-attempt-directions").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/shot-directions.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/shot-directions.csv')
     except AssertionError:
         driver.quit()
 
@@ -144,7 +145,7 @@ if __name__ == "__main__":
     soup = BeautifulSoup(driver.page_source, 'lxml')
     table = soup.find(id="stage-attempt-zones").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/shot-zones.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/shot-zones.csv')
     except AssertionError:
         driver.quit()
 
@@ -159,7 +160,7 @@ if __name__ == "__main__":
     soup = BeautifulSoup(driver.page_source, 'lxml')
     table = soup.find(id="stage-touch-zones").table
     try:
-        scrape_table(table, 'data/premier_league/2014_2015/action-zones.csv')
+        scrape_table(table, 'data/premier_league/2009_2010/action-zones.csv')
     except AssertionError:
         driver.quit()
 
