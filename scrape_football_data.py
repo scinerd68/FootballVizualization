@@ -25,7 +25,7 @@ def scrape_table(table: BeautifulSoup, output_file_name: str):
 
 if __name__ == "__main__":
     # Set the location of the webdriver
-    PATH = "D:\\chromedriver.exe"
+    PATH = "/home/viet/OneDrive/Studying Materials/Introduction to Data Science/EDA Project/chromedriver_linux64/chromedriver"
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
